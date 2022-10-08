@@ -1,7 +1,11 @@
 const API = "http://localhost:8000/product";
 
 // ? Сохранение тегов в переменные
-let infoBlock = document.getElementById("info_block");
+let block_info = document.getElementById("block_info");
+let cardIn = document.getElementById("cardIn");
+let closeIn = document.getElementById("closeIn");
+let cardP = document.getElementById("textin");
+
 // инпуты и кнопки для создания новых данных
 let inpDetails = document.querySelector(".section__add_details");
 let inpPrice = document.querySelector(".section__add_price");
@@ -145,6 +149,12 @@ function readProducts() {
             width="30"
             onclick="handleEditBtn(${product.id})"
           />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3720/3720101.png"
+            alt="edit"
+            width="30"
+            onclick="Info(${product.id})"
+          />
         </div> 
       </div>
         `;
@@ -155,16 +165,6 @@ function readProducts() {
 
 readProducts();
 // ? ============ Read End ============
-// ! =========== Sale Start ==========
-// function Funsal() {
-// a = product.price;
-// b = product.sales;
-// c = (a * b) / 100;
-// v = a - c;
-// console.log(v);
-// }
-// Funsal();
-// ? =========== Sale End ==========
 // ! ============ Delete Start ===========
 // todo вариант 1 для удаления
 // document.addEventListener("click", (e) => {
@@ -221,6 +221,7 @@ function handleEditBtn(id) {
       inpEditCategory.value = productObj.category;
       inpEditUrl.value = productObj.urlImg;
       editId = productObj.id;
+      console.log(productObj);
     });
 }
 
@@ -241,6 +242,30 @@ btnEditSave.addEventListener("click", () => {
   mainModal.style.display = "none";
 });
 // ? =============== Edit End ===========
+// ! ============ Info Start ==============
+function Info(id) {
+  block_info.style.display = "flex";
+  cardIn.style.display = "flex";
+  // cardP.style.display = "flex";
+  fetch(`${API}/${id}`)
+    .then(res => res.json())
+    .then(product => {
+      cardIn.innerHTML += `
+      <img src="${product.urlImg}"alt="edit"/>
+      <p id="textin">Oписание : ${product.details}</p>
+      <p id="textin">Цена : ${product.price} сом</p>
+      <p id="textin">Количество : ${product.quantity}</p>
+      <p id="textin">Категория : ${product.category}</p>
+      <p id="textin">Скидка : ${product.sales} %</p>
+      <p id="textin">Цена co скидкой : ${v} сом</p>`;
+    });
+  closeIn.addEventListener("click", () => {
+    block_info.style.display = "none";
+    cardIn.innerHTML = "";
+  });
+}
+
+// ? ============ Info Start =============
 
 // ! ============ Search Start ==========
 inpSearch.addEventListener("input", e => {
