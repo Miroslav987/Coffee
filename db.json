@@ -1,0 +1,31 @@
+{
+  "product": [
+    {
+      "details": "vwertb",
+      "price": "100",
+      "quantity": "1",
+      "category": "Американо",
+      "sales": "10",
+      "urlImg": "https://coffeefan.info/wp-content/uploads/2018/08/kofe-amerikano-v-domashnix-usoviyax.jpg",
+      "id": 2
+    },
+    {
+      "details": "аивчкент",
+      "price": "140",
+      "quantity": "1",
+      "category": "Капучино",
+      "sales": "20",
+      "urlImg": "https://domos.ru/images/blog/13677/Kapuchino_3.jpg",
+      "id": 3
+    },
+    {
+      "details": "sfbdgen",
+      "price": "150",
+      "quantity": "1",
+      "category": "Мокко",
+      "sales": "5",
+      "urlImg": "https://coffee-biz.ru/wp-content/uploads/2019/12/3-6.jpg",
+      "id": 4
+    }
+  ]
+}
