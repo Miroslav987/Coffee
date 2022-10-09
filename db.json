@@ -1,16 +1,7 @@
 {
   "product": [
     {
-      "details": "vwertb",
-      "price": "100",
-      "quantity": "1",
-      "category": "Американо",
-      "sales": "10",
-      "urlImg": "https://coffeefan.info/wp-content/uploads/2018/08/kofe-amerikano-v-domashnix-usoviyax.jpg",
-      "id": 2
-    },
-    {
-      "details": ".",
+      "details": "Очень вкусный",
       "price": "140",
       "quantity": "1",
       "category": "Капучино",
@@ -19,13 +10,22 @@
       "id": 3
     },
     {
-      "details": "sfbdgen",
+      "details": "Ещё не пробывал",
       "price": "150",
       "quantity": "1",
       "category": "Мокко",
       "sales": "5",
       "urlImg": "https://coffee-biz.ru/wp-content/uploads/2019/12/3-6.jpg",
       "id": 4
+    },
+    {
+      "details": "Божественный кофе",
+      "price": "130",
+      "quantity": "23",
+      "category": "Американо",
+      "sales": "50",
+      "urlImg": "https://e0.edimdoma.ru/data/ingredients/0000/6579/6579-ed4_wide.jpg?1515762698",
+      "id": 5
     }
   ]
 }

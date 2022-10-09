@@ -43,21 +43,21 @@ let currentPage = 1;
 // let section__add = document.querySelector(".section__add");
 // let admin_panel_arr = document.getElementsByClassName("admin-panel");
 
-// if (pinCode !== "Mirdin") {
-//   // setTimeout(() => {
-//   //   for (let i of admin_panel_arr) {
-//   //     console.log(i);
-//   //     i.style.display = "none";
-//   //   }
-//   // }, 100);
+// if (pinCode !== "qwerty") {
+//   setTimeout(() => {
+//     for (let i of admin_panel_arr) {
+//       console.log(i);
+//       i.style.display = "none";
+//     }
+//   }, 100);
 //   section__add.style.display = "none";
 // } else {
-//   // setTimeout(() => {
-//   //   for (let i of admin_panel_arr) {
-//   //     console.log(i);
-//   //     i.style.display = "block";
-//   //   }
-//   // }, 1000);
+//   setTimeout(() => {
+//     for (let i of admin_panel_arr) {
+//       console.log(i);
+//       i.style.display = "block";
+//     }
+//   }, 1000);
 //   section__add.style.display = "block";
 // }
 
@@ -250,6 +250,10 @@ function Info(id) {
   fetch(`${API}/${id}`)
     .then(res => res.json())
     .then(product => {
+      a = product.price;
+      b = product.sales;
+      c = (a * b) / 100;
+      v = a - c;
       cardIn.innerHTML += `
       <img src="${product.urlImg}"alt="edit"/>
       <p id="textin">Oписание : ${product.details}</p>
